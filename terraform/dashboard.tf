@@ -13,8 +13,8 @@ resource "aws_cloudwatch_dashboard" "dashboard" {
         properties = {
           metrics = [
             [
-              var.student_name,
-              "hello_world.count"
+              "${ var.prefix }-dashboard",
+              "get_hello_world.count"
             ]
           ]
           period = 60

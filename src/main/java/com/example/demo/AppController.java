@@ -23,7 +23,7 @@ public class AppController {
     @GetMapping("/")
     public ResponseEntity<String> helloWorld() {
         log.info("GET helloWorld");  
-        meterRegistry.counter("hello_world").increment();
+        meterRegistry.counter("get_hello_world").increment();
         return new ResponseEntity<>("Hello World", HttpStatus.OK);
     }
     
