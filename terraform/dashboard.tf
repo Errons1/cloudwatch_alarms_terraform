@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_dashboard" "hello_world" {
-  dashboard_name = var.student_name
+  dashboard_name = "${ var.prefix }-dashboard"
 
   dashboard_body = jsonencode({
     widgets = [
