@@ -2,7 +2,7 @@ resource "aws_apprunner_service" "apprunner" {
   service_name = "${ var.prefix }-apprunner"
   
   instance_configuration {
-    instance_role_arn = aws_iam_role.apprunner_access_role.arn
+    instance_role_arn = aws_iam_role.apprunner_role.arn
   }
   
   source_configuration {
