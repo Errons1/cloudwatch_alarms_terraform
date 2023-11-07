@@ -40,6 +40,7 @@ resource "aws_iam_role" "apprunner_role" {
 
 resource "aws_iam_policy_attachment" "apprunner_policy_attachment" {
   name       = "${ var.prefix }-apprunner-cloudwatch-full-access-attachment"
-  policy_arn = aws_iam_policy.apprunner_cloudwatch_full_access.arn
+#  policy_arn = aws_iam_policy.apprunner_cloudwatch_full_access.arn
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchFullAccess"
   roles      = [aws_iam_role.apprunner_role.name]
 }
