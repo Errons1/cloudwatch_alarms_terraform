@@ -9,6 +9,6 @@ variable "prefix" {
 }
 
 variable "image" {
-  default = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/snle:latest"
+  default = "244530008913.dkr.ecr.eu-west-1.amazonaws.com/snle001-private:latest"
   type = string
 }

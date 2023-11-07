@@ -28,8 +28,17 @@ resource "aws_cloudwatch_dashboard" "dashboard" {
 }
 
 module "alarm" {
-  source = "../aws_alarm"
+  source = "github.com/Errons1/aws_alarm.git"
   prefix = "snle"
-  alarm_email = "snorre@hotmail.no"
-  threshold = "5"
+  alarm_name = "amount-of-get-request"
+  alarm_namespace = "snle-dashboard"
+  metric_name = "Sum"
+  comparison_operator = "GreaterThanThreshold"
+  threshold = "50"
+  evaluation_periods = "2"
+  period = "60"
+  statistic = "Sum"
+  alarm_description = "Amoung of get requests"
+  protocol = "email"
+  endpoint = "snorreledal@hotmail.no"
 }
